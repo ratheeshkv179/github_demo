@@ -1,0 +1,77 @@
+name and email address required
+
+$ git config --global user.name 'ratheeshkv179'
+$ git config --global user.email 'ratheeshkv179@gmail.com'
+$ git config --global --list
+
+I)Creating and cloning repository from remote place(Github)
+-----------------------------------------------------------
+use HTTPs option from GitHub, and copy the URL
+
+$ git clone https://github.com/ratheeshkv179/github_demo.git
+
+go inside the directory
+-----------------------
+1) Get git status 
+
+$ git status
+
+tells about the branch
+2) Add/create a file 
+
+$ echo "hai ratheesh" >>test.txt
+$ git status 
+
+  It will show 'Untracked file' (File in our working directory, that is 
+  not added to git)
+3) Add a file to git
+
+$ git add text.txt
+$ git status 
+
+  It tells about 'Changes to be committed' indicate the staging area, yet to be committed
+  Everything in staging area can be committed using a single atomic commit
+4) Commit (moving/committing to local repository)
+
+$ git commit -m "Your commit message"
+$ git status
+
+  The working directory is clean, and our repository ahead of actual repository by 1 commit
+
+5) Pushing to remote repository
+
+$ git push origin master
+  
+  The 'origin' is the remote location, it is set during cloning
+  'origin' : the remote name, set automatically during cloning
+  'master' : the branch
+  Prompt for username and password
+
+II) Creating repository locally rather than pulling from github
+
+1) Create a folder and initialize it as current working directory
+$ git init folder_name
+  or 
+$ cd folder_name
+$ git init
+
+2) create a file 'file.txt'
+
+3) git add file.txt
+# To add multiple files at one time(recursively), 
+$ git add .
+
+4) git commit -m "message"
+
+Files only in working area are not 'tracked'
+Inorder to track need to move to staging area by 'git add'
+
+5) Git push
+Since the 'origin' is not assigned, we need to create a repository 
+on github and copy the URL
+ i) Add the origin
+    $ git remote add origin locationto.git 
+    $ git push origin master
+
+
+Done!!!
